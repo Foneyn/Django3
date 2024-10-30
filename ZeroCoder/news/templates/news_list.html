@@ -1,0 +1,6 @@
+   {% for news in news_list %}
+       <h2>{{ news.title }}</h2>
+       <p>By {{ news.author.username }} on {{ news.publication_date }}</p>
+       <p>{{ news.content|slice:":200" }}...</p>
+       <a href="{% url 'news_detail' news.id %}">Read more</a>
+   {% endfor %}
